@@ -1,0 +1,14 @@
+.quotemaincontainer {
+    height: 70vh;
+}
+
+.quotecontainer {
+    min-height: 24rem;
+    background-color: var(--blue);
+}
+
+@media screen and (min-width: 750px) {
+    .quotecontainer {
+        min-height: 30rem;
+    }
+}
