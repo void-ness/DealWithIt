@@ -1,0 +1,14 @@
+.addtaskmainContainer {
+    overflow: hidden;
+}
+
+.addtaskcontainer {
+    background: var(--blue);
+    bottom: -100%;
+}
+
+.addTaskoverlay {
+    z-index: -1;
+    opacity: 0.5;
+    height: 100%;
+}

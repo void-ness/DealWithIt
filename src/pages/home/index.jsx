@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PullToRefresh from 'react-simple-pull-to-refresh';
-import TaskCard from '../../components/TaskCard';
+import QuotesCard from '../../components/QuotesCard';
 import quoteData from '../../data/fetchData';
 
 const Home = () => {
@@ -30,7 +30,7 @@ const Home = () => {
     return (
         <>
             <PullToRefresh onRefresh={() => refresher1()} pullingContent="">
-                <TaskCard quotetext={quote} authorName={author} />
+                <QuotesCard quotetext={quote} authorName={author} />
             </PullToRefresh>
         </>
     )

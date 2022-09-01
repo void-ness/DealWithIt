@@ -7,7 +7,7 @@ const FooterItem = ({ icon, link }) => {
         <>
             <NavLink
                 className={({ isActive }) => (
-                    isActive ? 'text-slate-50' : 'text-slate-300'
+                    isActive ? 'text-slate-50 cursor-default' : 'text-slate-300 cursor-default'
                 )}
                 to={`/${link}`}
             >

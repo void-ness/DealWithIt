@@ -1,0 +1,42 @@
+.header {
+    background: var(--green-color);
+    width: 12rem;
+    height: 1.8rem;
+    position: absolute;
+    left: -1.2rem;
+    top: -0.5rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    transition: all 0.3s ease-in;
+}
+
+.taskitem input[type='checkbox'] {
+    appearance: none;
+    background: transparent;
+    border-color: var(--blue);
+}
+
+.taskitem input[type='checkbox']:after {
+    content: '';
+    left: 35%;
+    top: 10%;
+    border: solid var(--blue);
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    display: none;
+}
+
+.taskitem input[type='checkbox']:checked:after {
+    display: block;
+}
+
+.taskitem input[type='checkbox']:checked+label {
+    color: rgb(124, 124, 124);
+    text-decoration: line-through;
+}
+
+.taskitem label {
+    transition: 0.2s ease-in all;
+}

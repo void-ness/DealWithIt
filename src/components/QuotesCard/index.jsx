@@ -2,7 +2,7 @@ import React from 'react'
 import './style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const TaskCard = ({ quotetext, authorName }) => {
+const QuotesCard = ({ quotetext, authorName }) => {
     return (
         <>
             <div className="quotemaincontainer">
@@ -22,4 +22,4 @@ const TaskCard = ({ quotetext, authorName }) => {
     )
 };
 
-export default TaskCard;
+export default QuotesCard;
