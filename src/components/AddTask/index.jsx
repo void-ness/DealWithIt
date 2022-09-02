@@ -11,6 +11,7 @@ const AddTask = ({ tasks, inpTask, Settaskslength, taskDesc, SettaskDesc, taskla
             localStorage.setItem('tasks', JSON.stringify(tasks));
             Settaskslength(tasks.length);
             SettaskDesc("");
+            hideAddtask();
         }
     }
 
@@ -30,7 +31,9 @@ const AddTask = ({ tasks, inpTask, Settaskslength, taskDesc, SettaskDesc, taskla
             tasks.find((task) => task.id === inpTask.id).desc = taskDesc;
             localStorage.setItem('tasks', JSON.stringify(tasks));
             Settaskslength(tasks.length);
+            inpTask.desc = taskDesc;
             SettaskDesc("");
+            hideAddtask();
         }
     }
 

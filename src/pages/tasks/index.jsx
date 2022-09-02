@@ -24,7 +24,7 @@ const Tasks = () => {
             localStorage.setItem('tasks', '[]')
         }
         SetTasks(JSON.parse(localStorage.getItem('tasks')));
-    }, [tasksLength, taskState])
+    }, [tasksLength, taskState, task])
 
     const showtask = (task) => {
         if (task) {
@@ -53,8 +53,7 @@ const Tasks = () => {
     const ChangeTaskState = (inptask) => {
         tasksData.find((task) => task.id === inptask.id).checked = !inptask.checked;
         localStorage.setItem('tasks', JSON.stringify(tasksData));
-        SetTaskslength(tasksData.length);
-        SettaskState(!inptask.checked);
+        SetTask(inptask);
     }
 
     let timer;
@@ -99,6 +98,7 @@ const Tasks = () => {
             <AddTask
                 tasks={tasksData}
                 inpTask={task}
+                SetTask={SetTask}
                 Settaskslength={SetTaskslength}
                 containerRef={taskContainer}
                 overlayRef={taskOverlay}
