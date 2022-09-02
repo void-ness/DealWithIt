@@ -6,17 +6,15 @@ import './style.css';
 
 const Tasks = () => {
     const [tasksData, SetTasks] = useState(null);
+    const [task, SetTask] = useState(null);
     const [tasksLength, SetTaskslength] = useState(null);
-    const [taskDesc, SettaskDesc] = useState("");
+
     const [taskLabel, SettaskLabel] = useState("");
-    const [taskId, SettaskId] = useState("");
+    const [taskDesc, SettaskDesc] = useState("");
     const [taskState, SettaskState] = useState("");
 
     const taskContainer = useRef(null);
     const taskOverlay = useRef(null);
-
-    const taskInput = useRef(null);
-
     const AddBtn = useRef(null);
     const RemoveBtn = useRef(null);
     const UpdateBtn = useRef(null);
@@ -32,7 +30,7 @@ const Tasks = () => {
         if (task) {
             SettaskLabel("Update");
             SettaskDesc(task.desc);
-            SettaskId(task.id);
+            SetTask(task);
             AddBtn.current.style.display = "none";
             RemoveBtn.current.style.display = "block";
             UpdateBtn.current.style.display = "block";
@@ -52,11 +50,11 @@ const Tasks = () => {
         taskContainer.current.style.transition = 'all ease-out 0.6s';
     }
 
-    const ChangeTaskState = ({ id, checked }) => {
-        tasksData.find((task) => task.id === id).checked = !checked;
+    const ChangeTaskState = (inptask) => {
+        tasksData.find((task) => task.id === inptask.id).checked = !inptask.checked;
         localStorage.setItem('tasks', JSON.stringify(tasksData));
         SetTaskslength(tasksData.length);
-        SettaskState(checked);
+        SettaskState(!inptask.checked);
     }
 
     let timer;
@@ -82,11 +80,10 @@ const Tasks = () => {
             <div className="container flex flex-col justify-center items-center w-10/12 mx-auto mt-12">
                 {!(tasksData === [] || tasksData === null) ? (tasksData.map((task) => {
                     return (
+
                         <TaskItem
+                            task={task}
                             key={task.id}
-                            id={task.id}
-                            desc={task.desc}
-                            checked={task.checked}
                             TouchStart={TouchStart}
                             TouchEnd={TouchEnd}
                             ChangeTaskState={ChangeTaskState}
@@ -101,14 +98,14 @@ const Tasks = () => {
 
             <AddTask
                 tasks={tasksData}
+                inpTask={task}
                 Settaskslength={SetTaskslength}
                 containerRef={taskContainer}
                 overlayRef={taskOverlay}
-                inputRef={taskInput}
+                tasklabel={taskLabel}
                 taskDesc={taskDesc}
                 SettaskDesc={SettaskDesc}
-                taskId={taskId}
-                tasklabel={taskLabel}
+
                 AddBtnRef={AddBtn}
                 RemoveBtnRef={RemoveBtn}
                 UpdateBtnRef={UpdateBtn}
