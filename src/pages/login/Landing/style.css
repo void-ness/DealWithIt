@@ -1,0 +1,8 @@
+.landingpage_container {
+    z-index: 2;
+    transition: 0.2s ease-in;
+}
+
+.landingpage_text {
+    color: var(--blue);
+}

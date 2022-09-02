@@ -20,6 +20,10 @@ const Tasks = () => {
     const UpdateBtn = useRef(null);
 
     useEffect(() => {
+        if (localStorage.username !== "test" || localStorage.pass !== "test@123test") {
+            window.location = "/";
+        }
+
         if (!localStorage.getItem('tasks')) {
             localStorage.setItem('tasks', '[]')
         }

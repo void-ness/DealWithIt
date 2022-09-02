@@ -13,6 +13,10 @@ const Home = () => {
             SetQuote(data[0].quote);
             SetAuthor(data[0].author);
         });
+
+        if (localStorage.username !== "test" || localStorage.pass !== "test@123test") {
+            window.location = "/";
+        }
     }, [Refresh])
 
     const refresher1 = () => {
