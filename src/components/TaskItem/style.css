@@ -28,14 +28,16 @@
     display: none;
 }
 
+/* .taskitem .checked[type='checkbox']:after,
 .taskitem input[type='checkbox']:checked:after {
     display: block;
-}
+} */
 
+/* .taskitem .checked[type='checkbox']+label,
 .taskitem input[type='checkbox']:checked+label {
     color: rgb(124, 124, 124);
     text-decoration: line-through;
-}
+} */
 
 .taskitem label {
     transition: 0.2s ease-in all;
