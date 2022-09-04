@@ -14,21 +14,22 @@ const Home = () => {
             window.location = "/";
         }
 
-        quoteData().then((data) => {
-            SetQuote(data[0].quote);
-            SetAuthor(data[0].author);
-        });
-    }, [Refresh])
+        // eslint-disable-next-line
+    }, [])
 
     const refresher1 = () => {
         const currentValue = Refresh;
         setRefresh(!currentValue);
         return new Promise((resolve, reject) => {
             setTimeout(() => {
+                quoteData().then((data) => {
+                    SetQuote(data[0].quote);
+                    SetAuthor(data[0].author);
+                });
                 resolve(
                     "ok"
                 );
-            }, 500)
+            }, 400)
         })
     }
 
