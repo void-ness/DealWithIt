@@ -2,3 +2,8 @@
     color: #3146FF;
     z-index: 2;
 }
+
+.pg-breaker {
+    border: 0.4px solid #E0E0E0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}

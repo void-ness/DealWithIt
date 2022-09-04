@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { isRegistered } from '../../../essentials/auth';
 
 const Signin = () => {
     const [username, SetUsername] = useState(null);
@@ -10,12 +11,10 @@ const Signin = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         document.getElementById("landing-page").style.display = "none";
-        if (username.trim().toLowerCase() === "test" && pass === "test@123test") {
-            localStorage.setItem('username', 'test');
-            localStorage.setItem('pass', 'test@123test');
+
+        if (isRegistered({ username, pass })) {
             window.location = "/home";
         }
-
         else {
             alert("Please enter valid username/password");
         }
@@ -38,7 +37,7 @@ const Signin = () => {
                 </form>
 
                 <p className='no-acc text-white text-lg font-normal absolute bottom-4 left-0 w-full text-center'>Don’t have an account?
-                    <NavLink to="/signup" className="sign-btn font-bold"> Sign Up </NavLink>
+                    <NavLink to="/" className="sign-btn font-bold"> Sign Up </NavLink>
                 </p>
             </div >
         </div >

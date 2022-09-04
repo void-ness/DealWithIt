@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PullToRefresh from 'react-simple-pull-to-refresh';
 import QuotesCard from '../../components/QuotesCard';
 import quoteData from '../../data/fetchData';
+import { isAuthenticated } from '../../essentials/auth';
 
 const Home = () => {
     const [Refresh, setRefresh] = useState(false);
@@ -9,14 +10,14 @@ const Home = () => {
     const [author, SetAuthor] = useState("");
 
     useEffect(() => {
+        if (!isAuthenticated()) {
+            window.location = "/";
+        }
+
         quoteData().then((data) => {
             SetQuote(data[0].quote);
             SetAuthor(data[0].author);
         });
-
-        if (localStorage.username !== "test" || localStorage.pass !== "test@123test") {
-            window.location = "/";
-        }
     }, [Refresh])
 
     const refresher1 = () => {

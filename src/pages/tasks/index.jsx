@@ -3,6 +3,7 @@ import TaskItem from '../../components/TaskItem';
 import AddTask from '../../components/AddTask';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './style.css';
+import { isAuthenticated } from '../../essentials/auth';
 
 const Tasks = () => {
     const [tasksData, SetTasks] = useState(null);
@@ -20,7 +21,7 @@ const Tasks = () => {
     const UpdateBtn = useRef(null);
 
     useEffect(() => {
-        if (localStorage.username !== "test" || localStorage.pass !== "test@123test") {
+        if (!isAuthenticated()) {
             window.location = "/";
         }
 
@@ -80,7 +81,7 @@ const Tasks = () => {
 
     return (
         <>
-            <div className="container flex flex-col justify-center items-center w-10/12 mx-auto mt-12">
+            <div className="container flex flex-col justify-center items-center w-10/12 mx-auto mt-10">
                 {!(tasksData === [] || tasksData === null) ? (tasksData.map((task) => {
                     return (
 

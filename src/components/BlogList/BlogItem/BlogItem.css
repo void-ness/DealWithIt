@@ -1,0 +1,51 @@
+.blogItem-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.blogItem-cover {
+    overflow: hidden;
+    width: 100%;
+    height: 250px;
+    margin-bottom: 0.5rem;
+    border-radius: 20px;
+}
+
+.blogItem-cover_img {
+    width: 100%;
+    height: 250px;
+    transition: all 0.7s ease;
+}
+
+.blogItem-cover_img:hover {
+    transform: scale(1.05);
+}
+
+.blogItem-wrap h3 {
+    margin: 0.5rem 0 0rem 0;
+    flex: 1;
+}
+
+.blogItem-desc {
+    position: relative;
+    overflow: hidden;
+    max-height: 50px;
+    padding-right: 0.6rem;
+    font-size: 0.9rem;
+    color: #a9a9a9;
+}
+
+.blogItem-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+@media screen and (max-width:500px) {
+    .blogItem-cover {
+        height: 225px;
+    }
+
+    .blogItem-cover_img {
+        height: 225px;
+    }
+}

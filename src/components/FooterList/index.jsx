@@ -9,7 +9,7 @@ const FooterList = () => {
                 <div className="footer-container w-72 md:w-3/5 mx-auto rounded-3xl flex justify-around items-center px-4 py-3">
                     <FooterItem icon={"clipboard-check"} link={"tasks"} />
                     <FooterItem icon={"home"} link={"home"} />
-                    <FooterItem icon={"lightbulb"} link={"bulb"} />
+                    <FooterItem icon={"lightbulb"} link={"light"} />
                 </div>
             </footer>
         </>
