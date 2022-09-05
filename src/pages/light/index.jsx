@@ -67,7 +67,7 @@ const Light = () => {
                 <FontAwesomeIcon icon="arrow-right-from-bracket" />
             </button>
 
-            <div className="blogs-container w-10/12 mx-auto mt-11">
+            <div className="blogs-container w-10/12 mx-auto mt-9 mb-40">
                 <span className="text-2xl font-bold mb-4 block">Blogs</span>
                 {(!blogs || blogs.length === 0) ?
                     <EmptyList />

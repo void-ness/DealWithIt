@@ -60,7 +60,7 @@ const BlogBody = () => {
 
                             {/* author details of the blog */}
                             <footer>
-                                <p className='text-md font-light'>{blog.date}</p>
+                                <p className='text-md font-normal'>{blog.date}</p>
                             </footer>
                         </div>
 

@@ -14,6 +14,7 @@ const Home = () => {
             window.location = "/";
         }
 
+        document.getElementsByTagName('footer')[0].style.display = "block";
         // eslint-disable-next-line
     }, [])
 

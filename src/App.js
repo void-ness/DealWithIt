@@ -14,6 +14,7 @@ import BlogBody from './pages/BlogBody/BlogBody';
 
 function App() {
   library.add(faClipboardCheck, faHouse, faLightbulb, faQuoteLeft, faQuoteRight, faPlus, faUser, faLock, faHandHoldingHeart, faArrowRightFromBracket)
+
   return (
     <>
       <Router>

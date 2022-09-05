@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -12,13 +12,31 @@ const Signin = () => {
         e.preventDefault();
         document.getElementById("landing-page").style.display = "none";
 
+        // if a user is registered, if the user is accesing the content from a desktop
+        // in that case, the user is warned if they want to proceed or not
         if (isRegistered({ username, pass })) {
-            window.location = "/home";
+            if (window.matchMedia("(min-width: 750px)").matches) {
+                if (localStorage.desktopConfirm !== 'yes') {
+                    const confirm = prompt("This application is developed for mobile phone users and not optimised for desktop users. Kindly confirm with 'yes' if you want to continue");
+                    if (confirm.trim().toLowerCase() === "yes") {
+                        localStorage.setItem('desktopConfirm', 'yes')
+                        window.location = "/home";
+                    }
+
+                    else {
+                        localStorage.setItem('desktopConfirm', 'no');
+                    }
+                }
+            }
         }
         else {
             alert("Please enter valid username/password");
         }
     }
+
+    useEffect(() => {
+        document.getElementsByTagName('footer')[0].style.display = "none";
+    })
 
     return (
         <div className='login-form-container h-screen w-screen fixed top-0 left-0 bg-white' data-aos="fade">

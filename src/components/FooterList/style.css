@@ -1,3 +1,8 @@
 .footer-container {
     background-color: var(--blue);
 }
+
+footer {
+    z-index: 1;
+    height: fit-content;
+}
