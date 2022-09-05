@@ -6,7 +6,7 @@ const QuotesCard = ({ quotetext, authorName }) => {
     return (
         <>
             <div className="quotemaincontainer">
-                <div className="quotecontainer container rounded-2xl w-10/12 md:w-6/12 mx-auto mt-20 mb-28 relative flex justify-center items-center">
+                <div className="quotecontainer container rounded-2xl w-10/12 md:w-6/12 mx-auto mt-20 mb-32 relative flex justify-center items-center">
                     <p className="quotetext text-white text-2xl md:text-4xl italic font-normal px-6 py-20">
                         {quotetext ? quotetext : "An exciting quote to motivate you is in waiting. Pull this card down from top to load it"}
                     </p>

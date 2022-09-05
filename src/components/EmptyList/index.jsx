@@ -1,9 +1,10 @@
 import React from 'react';
 import './styles.css';
+import Emptygif from './empty.gif';
 
 const EmptyList = () => (
   <div className='emptyList-wrap'>
-    <img src='/assets/Blogs/images/13525-empty.gif' alt='empty' />
+    <img src={Emptygif} alt='Deal with It - empty' />
   </div>
 );
 

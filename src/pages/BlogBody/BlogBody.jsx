@@ -48,7 +48,7 @@ const BlogBody = () => {
             {blog ? (
                 <div className="blog-wrap_container">
                     <div className='blog-wrap'>
-                        <img className='blogBody-blog_img' src={blog.blogHeader.url} alt='cover' />
+                        <img className='blogBody-blog_img' src={blog.blogHeader.url} alt='Deal With It - cover' />
 
                         <div className="blog-headerbar">
                             {/* header part of the blog */}
