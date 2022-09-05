@@ -1,16 +1,15 @@
 # Introduction
 ## <b>Deal With It </b> <br>
-An anxiety reducer app - built with the aim to the help upliften your mood and focus on what is important.
+An anxiety reducer app - built with an aim to the help upliften your mood and focus on what is important.
 
 ## Key Features
-1. <b>A random quote</b> -from a vast library to cheer you on the homepage.
+1. <b>A random quote</b> -from a vast library to cheer you, on the homepage.
 
-2. <b>An in-built task manager</b> app - so that you can keep a track of your objectives allowing all the CRUD operations
+2. <b>An in-built task manager</b> app - so that you can keep a track of your objectives, allowing all the CRUD operations
 
 3. <b> Resources </b> - access to tons of different resources whenever you need them. 
 
 4. <b> Blogs </b> - monthly updated blog from the founder's desk
-<br>
 
 ## Deployment
 Go **checkout the project** from your mobile phones by clicking [here]()  
@@ -18,7 +17,7 @@ Go **checkout the project** from your mobile phones by clicking [here]()
 **Credentials**
 - username - test
 - password - test@123
-<br>
+
 <br>
 
 # Installation
@@ -39,7 +38,7 @@ serve -s build
 ```
 
 Now the app will start working on the localhost:3000
-<br>
+
 <br>
 
 # Project Snaps
@@ -65,7 +64,7 @@ Now the app will start working on the localhost:3000
 
 <img src="images/snap4.png" alt="Resources Section" height=600/><br>
 (_A glimpse of the resources page_)
-<br>
+
 <br>
 
 # Tech Stack
@@ -75,7 +74,7 @@ Now the app will start working on the localhost:3000
 ## 2. **Backend**
     - Hygraph - headless CMS for React
     - APINinjas - for fetching random quotes
-<br>
+
 <br>
 
 # Thanks
