@@ -28,6 +28,11 @@ const Signin = () => {
                     }
                 }
             }
+
+            else {
+                // logic for phone users
+                window.location = "/home";
+            }
         }
         else {
             alert("Please enter valid username/password");
