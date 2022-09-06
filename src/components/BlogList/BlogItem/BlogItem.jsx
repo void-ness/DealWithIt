@@ -13,7 +13,7 @@ const BlogItem = ({
 }) => {
     return (
         <div className='blogItem-wrap'>
-            <Link className='blogItem-link' to={`/blogs123/${slug}`}>
+            <Link className='blogItem-link' to={`/blogs/${slug}`}>
                 <div className="blogItem-cover">
                     <img className='blogItem-cover_img' src={blogHeader.url} alt='blog cover' />
                 </div>
