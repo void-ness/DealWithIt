@@ -1,6 +1,6 @@
 # Introduction
 ## <b>Deal With It </b> <br>
-An anxiety reducer app - built with an aim to the help upliften your mood and focus on what is important.
+An anxiety reducer app - built with an aim to help uplift your mood and focus on what's important.
 
 ## Key Features
 1. <b>A random quote</b> -from a vast library to cheer you, on the homepage.
@@ -12,7 +12,7 @@ An anxiety reducer app - built with an aim to the help upliften your mood and fo
 4. <b> Blogs </b> - monthly updated blog from the founder's desk
 
 ## Deployment
-Go **checkout the project** from your mobile phones by clicking [here]()  
+Go **checkout the project** from your mobile phones by clicking [here](https://dealwithit.vercel.app/)  
 
 **Credentials**
 - username - test
