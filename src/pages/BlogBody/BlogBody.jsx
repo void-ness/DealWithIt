@@ -59,9 +59,7 @@ const BlogBody = () => {
                             </header>
 
                             {/* author details of the blog */}
-                            <footer>
-                                <p className='text-md font-normal'>{blog.date}</p>
-                            </footer>
+                            <p className='text-md font-normal mt-1'>{blog.date}</p>
                         </div>
 
                         {/* Blog description */}

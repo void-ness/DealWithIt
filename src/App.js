@@ -24,7 +24,7 @@ function App() {
           <Route element={< Home />} path='/home'></Route>
           <Route element={< Tasks />} path='/tasks'></Route>
           <Route element={< Light />} path='/light'></Route>
-          <Route element={<BlogBody />} path='/blogs123/:id'></Route>
+          <Route element={<BlogBody />} path='/blogs/:id'></Route>
         </Routes>
         <FooterList />
       </Router>

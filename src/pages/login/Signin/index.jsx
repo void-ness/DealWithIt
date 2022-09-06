@@ -27,6 +27,10 @@ const Signin = () => {
                         localStorage.setItem('desktopConfirm', 'no');
                     }
                 }
+
+                else {
+                    window.location = "/home";
+                }
             }
 
             else {
