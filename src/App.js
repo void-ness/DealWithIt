@@ -3,6 +3,8 @@ import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faClipboardCheck, faHouse, faLightbulb, faQuoteLeft, faQuoteRight, faPlus, faUser, faLock, faHandHoldingHeart, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import ReactGA from 'react-ga';
 
 import NavList from './components/navlist';
 import FooterList from './components/FooterList';
@@ -12,8 +14,15 @@ import Login from './pages/login';
 import Light from './pages/light';
 import BlogBody from './pages/BlogBody/BlogBody';
 
+const TRACKING_ID = "G-41WX9FTSDK";
+ReactGA.initialize(TRACKING_ID);
+
 function App() {
   library.add(faClipboardCheck, faHouse, faLightbulb, faQuoteLeft, faQuoteRight, faPlus, faUser, faLock, faHandHoldingHeart, faArrowRightFromBracket)
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, [])
 
   return (
     <>

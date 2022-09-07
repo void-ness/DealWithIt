@@ -4,6 +4,7 @@ import AddTask from '../../components/AddTask';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './style.css';
 import { isAuthenticated } from '../../essentials/auth';
+import useAnalyticsEventTracker from '../../essentials/useAnalyticsEventTracker';
 
 const Tasks = () => {
     const [tasksData, SetTasks] = useState(null);
@@ -12,6 +13,7 @@ const Tasks = () => {
 
     const [taskLabel, SettaskLabel] = useState("");
     const [taskDesc, SettaskDesc] = useState("");
+    // eslint-disable-next-line
     const [taskState, SettaskState] = useState("");
 
     const taskContainer = useRef(null);
@@ -19,6 +21,8 @@ const Tasks = () => {
     const AddBtn = useRef(null);
     const RemoveBtn = useRef(null);
     const UpdateBtn = useRef(null);
+
+    const gaEventTracker = useAnalyticsEventTracker('Tasks');
 
     useEffect(() => {
         if (!isAuthenticated()) {
@@ -53,12 +57,16 @@ const Tasks = () => {
         taskOverlay.current.style.transition = 'all ease-out 2s';
         taskContainer.current.style.bottom = "0%";
         taskContainer.current.style.transition = 'all ease-out 0.6s';
+
+        gaEventTracker('task created')
     }
 
     const ChangeTaskState = (inptask) => {
         tasksData.find((task) => task.id === inptask.id).checked = !inptask.checked;
         localStorage.setItem('tasks', JSON.stringify(tasksData));
         SetTask(inptask);
+
+        gaEventTracker('task updated')
     }
 
     let timer;

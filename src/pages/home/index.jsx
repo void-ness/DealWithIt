@@ -3,6 +3,7 @@ import PullToRefresh from 'react-simple-pull-to-refresh';
 import QuotesCard from '../../components/QuotesCard';
 import quoteData from '../../data/fetchData';
 import { isAuthenticated } from '../../essentials/auth';
+import useAnalyticsEventTracker from '../../essentials/useAnalyticsEventTracker';
 
 const Home = () => {
     const [Refresh, setRefresh] = useState(false);
@@ -18,9 +19,13 @@ const Home = () => {
         // eslint-disable-next-line
     }, [])
 
+    const gaEventTracker = useAnalyticsEventTracker('Home');
+
     const refresher1 = () => {
         const currentValue = Refresh;
         setRefresh(!currentValue);
+        gaEventTracker('quote pulled')
+
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 quoteData().then((data) => {
