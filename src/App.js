@@ -14,7 +14,7 @@ import Login from './pages/login';
 import Light from './pages/light';
 import BlogBody from './pages/BlogBody/BlogBody';
 
-const TRACKING_ID = "GT-W6XL75V";
+const TRACKING_ID = "UA-240304354-1";
 ReactGA.initialize(TRACKING_ID);
 
 function App() {
