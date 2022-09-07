@@ -14,7 +14,7 @@ import Login from './pages/login';
 import Light from './pages/light';
 import BlogBody from './pages/BlogBody/BlogBody';
 
-const TRACKING_ID = "G-41WX9FTSDK";
+const TRACKING_ID = "GT-W6XL75V";
 ReactGA.initialize(TRACKING_ID);
 
 function App() {
