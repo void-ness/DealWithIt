@@ -7,7 +7,7 @@ import { isAuthenticated } from '../../essentials/auth';
 import useAnalyticsEventTracker from '../../essentials/useAnalyticsEventTracker';
 
 const Tasks = () => {
-    const [tasksData, SetTasks] = useState(null);
+    const [tasksData, SetTasks] = useState([{ "desc": "This is a demo task", "id": 1673962884069, "checked": false }]);
     const [task, SetTask] = useState(null);
     const [tasksLength, SetTaskslength] = useState(null);
 
