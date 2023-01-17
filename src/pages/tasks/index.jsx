@@ -7,7 +7,7 @@ import { isAuthenticated } from '../../essentials/auth';
 import useAnalyticsEventTracker from '../../essentials/useAnalyticsEventTracker';
 
 const Tasks = () => {
-    const [tasksData, SetTasks] = useState([{ "desc": "This is a demo task", "id": 1673962884069, "checked": false }]);
+    const [tasksData, SetTasks] = useState([]);
     const [task, SetTask] = useState(null);
     const [tasksLength, SetTaskslength] = useState(null);
 
@@ -30,7 +30,7 @@ const Tasks = () => {
         }
 
         if (!localStorage.getItem('tasks')) {
-            localStorage.setItem('tasks', '[]')
+            localStorage.setItem('tasks', '[{ "desc": "This is a demo task", "id": 1673962884069, "checked": false }]')
         }
         SetTasks(JSON.parse(localStorage.getItem('tasks')));
     }, [tasksLength, taskState, task])
