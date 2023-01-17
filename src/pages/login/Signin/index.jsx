@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { isRegistered } from '../../../essentials/auth';
 
 const Signin = () => {
-    const [username, SetUsername] = useState(null);
-    const [pass, SetPass] = useState(null);
+    const [username, SetUsername] = useState("test");
+    const [pass, SetPass] = useState("test@123");
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -54,11 +54,15 @@ const Signin = () => {
                 <form onSubmit={onSubmit}>
                     <div className="flex my-7 items-center justify-center">
                         <FontAwesomeIcon icon="user" className='text-white text-xl mr-4' />
-                        <input value={"test"} type="text" className="p-1 pl-2 border-0 rounded" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" onChange={(e) => SetUsername(e.target.value)} />
+                        <input value={"test"} type="text" className="p-1 pl-2 border-0 rounded" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping"
+                        // onChange={(e) => SetUsername(e.target.value)}
+                        />
                     </div>
                     <div className="flex my-7 items-center justify-center">
                         <FontAwesomeIcon icon="lock" className='text-white text-xl mr-4' />
-                        <input value={"test@123"} type="password" className="p-1 pl-2 border-0 rounded" placeholder="Password" aria-label="password" aria-describedby="addon-wrapping" onChange={(e) => SetPass(e.target.value)} />
+                        <input value={"test@123"} type="password" className="p-1 pl-2 border-0 rounded" placeholder="Password" aria-label="password" aria-describedby="addon-wrapping"
+                        // onChange={(e) => SetPass(e.target.value)}
+                        />
                     </div>
                     <button type="submit" className="btn login-btn rounded-full m-4 px-6 py-1 bg-white active:bg-slate-200">Login</button>
                 </form>
